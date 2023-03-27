@@ -1,0 +1,47 @@
+.example-card {
+    max-width: 1080px;
+    margin: 20px auto;
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+    page-break-after: always;
+  }
+  
+  .example-header-image {
+    background-image: url("/assets/Images/key-commercial-icon.png");
+    background-size: cover;
+    print-color-adjust: exact;
+  }
+
+
+  td {
+    vertical-align: baseline;
+    padding: 10px;
+  }
+ 
+  
+  .example-section {
+    display: flex;
+    align-content: right;
+    align-items: right;
+    height: 60px;
+  }
+
+  @page{
+    size: letter;
+    margin: 20px;
+    padding: auto;
+
+  }
+
+  @media print {
+    .noprint {
+      display:none !important;
+    }
+  }
+
+    //below does not work. need to have flex box design?
+.button {
+  align-self: right;
+}
+
+

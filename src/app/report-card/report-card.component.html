@@ -1,0 +1,33 @@
+<!--<section class="example-section noprint"> 
+    <mat-checkbox class="example-margin" [(ngModel)]="selectAll">Select All</mat-checkbox>
+  </section>-->
+  <!-- [ngClass]="{'noprint': !report.select}"-->
+<mat-card class="example-card {{report.print}}" *ngFor="let report of reports">
+  <mat-card-header>
+    <mat-card-actions >
+        <mat-checkbox class = "noprint" [value] = "report.id" [checked] = "report.select" (click)="onSelect($event)">Select</mat-checkbox>
+    </mat-card-actions>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>FEATURED PROJECT EXPERIENCE</mat-card-title>
+    <mat-card-subtitle>{{report.title}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{report.picture}}" alt={{report.location}}>
+  <mat-card-content>
+    <table>
+        <tr>
+            <td style="font-weight: bold" nowrap="nowrap"> LOCATION:</td>
+            <td>{{report.location}}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold" nowrap="nowrap">{{report.secondColumnName}}</td>
+            <td>{{report.secondColumnInput}}</td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold" nowrap="nowrap">PROJECT SCOPE:</td>
+            <td style="text-align: justify">{{report.projectScope}}</td>
+        </tr>
+    </table>    
+  </mat-card-content>
+</mat-card>
+<button class="button noprint" (click)="printPage()">Print</button>
+
