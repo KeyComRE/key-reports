@@ -3,7 +3,7 @@
     margin: 20px auto;
     margin-bottom: 8px;
     page-break-inside: avoid;
-    page-break-after: always;
+    //page-break-after: always;
   }
   
   .example-header-image {
@@ -17,7 +17,6 @@
     vertical-align: baseline;
     padding: 10px;
   }
- 
   
   .example-section {
     display: flex;
@@ -26,22 +25,30 @@
     height: 60px;
   }
 
-  @page{
-    size: letter;
-    margin: 20px;
-    padding: auto;
+  @page {
+    //height: auto;
+    //margin: auto;
+    //padding: none;
 
   }
 
   @media print {
     .noprint {
       display:none !important;
+      //page-break-inside: avoid;
+      //page-break-after: always;
     }
+    /*img {
+      max-width: 710px;
+      }
+    html, body {
+      height: auto;
+    }*/
   }
 
     //below does not work. need to have flex box design?
-.button {
-  align-self: right;
+.example-button-row {
+  margin-left: 1080px;
 }
 
 
